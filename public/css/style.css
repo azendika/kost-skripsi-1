@@ -8,6 +8,13 @@ a {
     text-decoration: none;
 }
 
+/* Custom CSS to center the modal */
+/* .modal-dialog-centered-custom {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+} */
+
 /* Untuk mengubah warna link */
 a {
     color: #333; /* Ganti dengan warna yang diinginkan */
@@ -21,6 +28,7 @@ a:hover {
 body {
     overflow: hidden; /* Prevent scrolling */
 }
+
 /* Custom CSS for reducing font size in the modal */
 .modal-content {
     font-size: 14px; /* Adjust the value as needed */
@@ -28,20 +36,17 @@ body {
 
 
 
-.admin-link.no-hover:hover {
-    background-color: transparent;
-}
 
 
 
 /* Style for admin text */
 
-#content-side {
+/* #content-side {
     display: flex;
     flex-direction: column;
     background-color: #f8f8f8;
     box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
-}
+} */
 
 #bg-body {
     background-color: #383d3f;
@@ -55,14 +60,14 @@ body {
     display: flex;
     /* position: absolute; */
     flex-direction: column;
-    align-items: center;
-    min-height: 90vh;
-    min-width: 100vh;
+    /* align-items: center; */
+    min-height: 80vh;
+    min-width: 180vh;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: white;
-    margin: 40px;
+    margin: 30px;
 }
 .pagination .page-link {
     color: grey; /* Change this to your desired color */
@@ -109,11 +114,11 @@ body {
     margin-top: 10px;
 }
 /* Additional responsive adjustments */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .sidebar {
         padding-top: 0;
     }
-}
+} */
 
 /* Add this CSS to your stylesheet */
 .form-label {
@@ -177,14 +182,18 @@ body {
     animation: spin 1s linear infinite;
 }
 
+/* Custom CSS to center the modal */
+
+
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
 /* Responsive adjustments */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .sidebar {
         min-height: auto;
     }
-}
+} */

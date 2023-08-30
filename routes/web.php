@@ -21,18 +21,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', [SesiController::class, 'index']);
+    Route::get('/', [SesiController::class, 'index'])->name('login');
     Route::post('/', [SesiController::class, 'login']);
 });
 
-Route::get('/logout',[SesiController::class,'logout']);
-Route::get('/home', function () {
-    return view('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.dashboard');
+    Route::get('/logout', [SesiController::class, 'logout'])->name('logout');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.dashboard');
+Route::get('/home', function () {
+    return view('dashboard.dashboard');
+});
 
-//kamar route
+// Your other route definitions for kamar, lokasi_kos, etc.
 
 
 Route::get('/kamar', [KamarController::class, 'index'])->name('kamar.index');
