@@ -126,6 +126,9 @@
         
     </table>
     
-    {{ $filteredKamarData->appends(request()->except('page'))->links() }}
+    <div class="pagination">
+        {{ $filteredKamarData->appends(request()->except('page'))->links() }}
+    </div>
+    
 </div>
 @endsection

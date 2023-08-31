@@ -62,23 +62,44 @@ body {
     flex-direction: column;
     /* align-items: center; */
     min-height: 80vh;
-    min-width: 180vh;
+    min-width: 170vh;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: white;
-    margin: 30px;
+    margin: 40px;
 }
+/* Custom pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+    list-style: none;
+}
+
 .pagination .page-link {
-    color: grey; /* Change this to your desired color */
+    padding: 5px 10px;
+    border: 1px solid #ffffff;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-
-.pagination .page-item.active .page-link {
-    background-color: grey; /* Change this to your desired color */
-    border-color: grey; /* Change this to your desired color */
+.pagination .page-link:hover {
+    background-color: #f0f0f0;
 }
-/* ... (other styles) ... */
+
+.pagination .active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
 
 .btn-add-data {
     background-color: #6c7075;
