@@ -95,7 +95,10 @@ class PenghuniController extends Controller
      */
     public function show($id)
     {
-        //
+        // //
+        // $penghuni = Penghuni::findOrFail($id);
+    
+        // return view('lokasi_kos.detail', compact('lokasiKos'));
     }
 
     /**

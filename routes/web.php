@@ -43,6 +43,7 @@ Route::get('/kamar', [KamarController::class, 'index'])->name('kamar.index');
 Route::get('/fetch-kamar-by-lokasi/{lokasiId}', 'KamarController@fetchByLokasi')->name('kamar.fetchByLokasi');
 Route::get('/kamar/create', [KamarController::class, 'create'])->name('kamar.create');
 Route::post('/kamar', [KamarController::class, 'store'])->name('kamar.store');
+Route::get('/showdata',[KamarController::class, 'showData'])->name('kamar.showData');
 Route::get('/kamar/{id}/edit', [KamarController::class, 'edit'])->name('kamar.edit');
 Route::put('/kamar/{id}', [KamarController::class, 'update'])->name('kamar.update');
 Route::delete('/kamar/{id}', [KamarController::class, 'destroy'])->name('kamar.destroy');

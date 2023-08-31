@@ -89,7 +89,7 @@
         <tbody>
             @forelse ($filteredKamarData as $key => $item)
             <tr>
-                <td>{{ $loop->iteration }}</td>
+                <td>{{ ($filteredKamarData->currentPage() - 1) * $filteredKamarData->perPage() + $loop->iteration }}</td>
                 <td>{{ $item->no_kamar }}</td>
                 <td>{{ $item->harga }}</td>
                 <td>{{ $item->fasilitas }}</td>
@@ -124,11 +124,11 @@
             @endforelse
         </tbody>
         
+        
     </table>
-    
-    <div class="pagination">
         {{ $filteredKamarData->appends(request()->except('page'))->links() }}
-    </div>
+
+
     
 </div>
 @endsection

@@ -18,14 +18,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet" type="text/css">
-<link href="<?php echo e(asset('css/sidebar.css')); ?>" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('css/sidebar.css')); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo e(asset('css/search.css')); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo e(asset('css/dashboard.css')); ?>" rel="stylesheet" type="text/css">
+    
+  
     <link rel="stylesheet" href="<?php echo e(asset('css/all.min.css')); ?>">
 </head>
 
 <body>
-  <nav>
+  <nav  class="sidebar">
     <div class="sidebar-top">
       <span class="shrink-btn">
         <i class='bi bi-chevron-left'></i>
@@ -41,7 +43,7 @@
       <ul>
           <div class="active-tab"></div>
           <li class="tooltip-element" data-tooltip="0">
-            <a href="/dashboard" class="active" data-active="0">
+            <a href="/dashboard"  data-active="0">
               <div class="icon">
                 <i class='bi bi-speedometer2'></i>
                 <i class='bi bi-speedometer2'></i>
@@ -53,7 +55,7 @@
             <a href="/lokasi_kos" data-active="1">
               <div class="icon">
                 <i class='bi bi-house-door'></i>
-                <i class='bi bis-house-door'></i>
+                <i class='bi bi-house-door'></i>
               </div>
               <span class="link hide">Data Lokasi</span>
             </a>
@@ -106,72 +108,17 @@
   </div>
   </nav>
 
-  <div class="centered-content">
+<script src="<?php echo e(asset('javascript/sidebar.js')); ?>"></script>
   <main >
-    
+    <div class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+    <div class="centered-content">
         <?php echo $__env->yieldContent('content'); ?>
-   
+      </div>
 </main>
 
- <script>
-const shrink_btn = document.querySelector(".shrink-btn");
-const sidebar_links = document.querySelectorAll(".sidebar-links a");
-const active_tab = document.querySelector(".active-tab");
-const shortcuts = document.querySelector(".sidebar-links h4");
-const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
-let activeIndex;
-
-shrink_btn.addEventListener("click", () => {
-  document.body.classList.toggle("shrink");
-  setTimeout(moveActiveTab, 400);
-
-  shrink_btn.classList.add("hovered");
-
-  setTimeout(() => {
-    shrink_btn.classList.remove("hovered");
-  }, 500);
-});
-
-function moveActiveTab() {
-  let topPosition = activeIndex * 58 + 2.5;
-
-  if (activeIndex > 5) {
-    topPosition += shortcuts.clientHeight;
-  }
-
-  active_tab.style.top = `${topPosition}px`;
-}
-
-function changeLink() {
-  sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
-  this.classList.add("active");
-
-  activeIndex = this.dataset.active;
-
-  moveActiveTab();
-
-  // Trigger the tooltip hover effect for the clicked menu
-  tooltip_elements[activeIndex].dispatchEvent(new Event("mouseover"));
-}
-
-sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
-
-function showTooltip() {
-  let tooltip = this.parentNode.lastElementChild;
-  let spans = tooltip.children;
-  let tooltipIndex = this.dataset.tooltip;
-
-  Array.from(spans).forEach((sp) => sp.classList.remove("show"));
-  spans[tooltipIndex].classList.add("show");
-
-  tooltip.style.top = `${(100 / (spans.length * 2)) * (tooltipIndex * 2 + 1)}%`;
-}
-
-tooltip_elements.forEach((elem) => {
-  elem.addEventListener("mouseover", showTooltip);
-});
- </script>
 </body>
 
 </html><?php /**PATH C:\kost-skripsi\resources\views/layout/template.blade.php ENDPATH**/ ?>

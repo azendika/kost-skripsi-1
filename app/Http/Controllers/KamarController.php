@@ -42,7 +42,11 @@ class KamarController extends Controller
     // ... Other methods in your controller ...
 
 
-
+    public function showKamarData() {
+        $filteredKamarData = Kamar::all(); // Fetch all kamar data
+    
+        return view('kamar.index', compact('kamarData'));
+    }
 
 
 
@@ -86,9 +90,12 @@ class KamarController extends Controller
             'status' => $request->status,
             'kost_id' => $request->kost_id,
         ];
-    
-        Kamar::create($data); // Create a new kamar record
-        return redirect()->route('kamar.index')->with('success_add', 'Berhasil menambahkan data kamar');
+
+
+    //  \Illuminate\Support\Facades\Cache::forget('kamar.index');
+
+    $page = $request->input('page', 1); // Get the current page or default to 1
+    return redirect()->route('kamar.index', ['page' => $page])->with('success_add', 'Berhasil menambahkan data kamar');
     }
     
 
