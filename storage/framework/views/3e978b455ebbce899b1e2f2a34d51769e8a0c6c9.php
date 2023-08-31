@@ -77,7 +77,7 @@
             </a>
           </li>
           <li class="tooltip-element" data-tooltip="4">
-            <a href="/penghuni" data-active="4">
+            <a href="#" data-active="4">
               <div class="icon">
                 <i class='bi bi-person-plus'></i>
                 <i class='bi bi-person-plus'></i>
@@ -104,6 +104,8 @@
           </div>
         </ul>
   </div>
+
+ 
   </nav>
 
   <div class="centered-content">
@@ -112,7 +114,7 @@
         <?php echo $__env->yieldContent('content'); ?>
    
 </main>
-
+</div>
  <script>
 const shrink_btn = document.querySelector(".shrink-btn");
 const sidebar_links = document.querySelectorAll(".sidebar-links a");

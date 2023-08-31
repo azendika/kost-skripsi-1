@@ -126,8 +126,8 @@
         
     </table>
     
-    
-    
+    <?php echo e($filteredKamarData->appends(request()->except('page'))->links()); ?>
+
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\kost-skripsi\resources\views/kamar/index.blade.php ENDPATH**/ ?>

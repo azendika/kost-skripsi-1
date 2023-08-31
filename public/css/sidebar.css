@@ -9,7 +9,7 @@
 }
 
 :root {
-  --main-color: #3531f1;
+  --main-color: #3d5af1;
   --main-color-dark: #3651d4;
   --main-color-light: #5872f5;
   --text-color: #cfcde7;
@@ -37,7 +37,7 @@ nav {
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: #4322fb;
+  background-color: var(--main-color);
   width: 16rem;
   padding: 1.8rem 0.85rem;
   color: #fff;
@@ -168,7 +168,6 @@ nav:hover .shrink-btn,
 }
 .sidebar-links {
     margin-left: -10px; /* Atur nilai margin sesuai kebutuhan untuk menggeser ke kiri */
-    
   }
   
 
